@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepGuard</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div id="root">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                    </svg>
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="star">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>SleepGuard</h1>
+                    <p>Your Sleep Health Assistant</p>
+                </div>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="toggle-btn">
+                    <span class="toggle-slider">
+                        <svg id="toggleIcon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sleep Score -->
+            <div class="sleep-score-card">
+                <div class="score-header">
+                    <h3>Sleep Score</h3>
+                    <div class="score-badge">+12% vs last week</div>
+                </div>
+                <div class="score-display">
+                    <div class="circular-progress">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-circle-bg" cx="60" cy="60" r="54"/>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" stroke-dasharray="339.292" stroke-dashoffset="61.07"/>
+                        </svg>
+                        <div class="score-text">
+                            <div class="score-number">82</div>
+                            <div class="score-total">/ 100</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="score-metrics">
+                    <div class="metric">
+                        <div class="metric-icon target">🎯</div>
+                        <div class="metric-value">11:00 PM</div>
+                        <div class="metric-label">Target</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon actual">🕐</div>
+                        <div class="metric-value">12:45 AM</div>
+                        <div class="metric-label">Actual</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon streak">🌙</div>
+                        <div class="metric-value">5 days</div>
+                        <div class="metric-label">Streak</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <button class="action-btn primary" id="goingToBed">
+                    <span class="action-icon">🌙</span>
+                    Going to Bed Now
+                </button>
+                <button class="action-btn secondary" id="fiveMinutes">
+                    <span class="action-icon">⏰</span>
+                    5 More Minutes
+                </button>
+                <button class="action-btn secondary" id="snooze">
+                    <span class="action-icon">☕</span>
+                    Snooze for 30 Mins
+                </button>
+            </div>
+
+            <!-- Activity Status -->
+            <div class="activity-status">
+                <h3>Today's Activity</h3>
+                <div class="activity-item">
+                    <div class="activity-icon">🖱️</div>
+                    <div class="activity-info">
+                        <div class="activity-name">Mouse Movement</div>
+                        <div class="activity-time">Just now</div>
+                    </div>
+                    <div class="activity-count">47</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">⌨️</div>
+                    <div class="activity-info">
+                        <div class="activity-name">Keyboard Input</div>
+                        <div class="activity-time">2 min ago</div>
+                    </div>
+                    <div class="activity-count">23</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">📑</div>
+                    <div class="activity-info">
+                        <div class="activity-name">Tab Switches</div>
+                        <div class="activity-time">5 min ago</div>
+                    </div>
+                    <div class="activity-count">12</div>
+                </div>
+            </div>
+
+            <!-- Late Night Warning -->
+            <div class="late-night-warning" id="lateNightWarning" style="display: none;">
+                <div class="warning-icon">🌙</div>
+                <div class="warning-text">
+                    <strong>Late Night Mode</strong>
+                    <p>Consider winding down soon for better sleep quality.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="status-indicators">
+                <div class="status-item">
+                    <div class="status-dot active"></div>
+                    <span>Monitoring</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot" id="lateNightDot"></div>
+                    <span id="timeStatus">Normal Hours</span>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn">⚙️ Settings</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

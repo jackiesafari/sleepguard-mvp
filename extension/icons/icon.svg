@@ -1,0 +1,29 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="64" fill="#DC2626"/>
+  
+  <!-- Moon -->
+  <path d="M64 20C64 20 44 30 44 50C44 70 64 80 64 80C64 80 84 70 84 50C84 30 64 20 64 20Z" fill="white"/>
+  
+  <!-- Star -->
+  <polygon points="64,25 67,35 77,35 69,42 72,52 64,45 56,52 59,42 51,35 61,35" fill="#FBBF24"/>
+  
+  <!-- Book with circuit lines -->
+  <rect x="40" y="85" width="48" height="28" rx="4" fill="white"/>
+  <rect x="42" y="87" width="20" height="24" rx="2" fill="#DC2626"/>
+  <rect x="66" y="87" width="20" height="24" rx="2" fill="#DC2626"/>
+  
+  <!-- Circuit lines on book -->
+  <line x1="44" y1="92" x2="60" y2="92" stroke="white" stroke-width="1"/>
+  <line x1="44" y1="96" x2="58" y2="96" stroke="white" stroke-width="1"/>
+  <line x1="44" y1="100" x2="56" y2="100" stroke="white" stroke-width="1"/>
+  <line x1="68" y1="92" x2="84" y2="92" stroke="white" stroke-width="1"/>
+  <line x1="68" y1="96" x2="82" y2="96" stroke="white" stroke-width="1"/>
+  <line x1="68" y1="100" x2="80" y2="100" stroke="white" stroke-width="1"/>
+  
+  <!-- Circuit pads -->
+  <circle cx="46" cy="92" r="1" fill="white"/>
+  <circle cx="60" cy="92" r="1" fill="white"/>
+  <circle cx="70" cy="92" r="1" fill="white"/>
+  <circle cx="84" cy="92" r="1" fill="white"/>
+</svg>

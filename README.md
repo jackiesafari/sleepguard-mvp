@@ -1,23 +1,33 @@
-# SleepGuard MVP
+# SleepGuard Chrome Extension
 
-A smart sleep reminder application that monitors user activity and provides gentle reminders when users are still active late at night. Built for healthcare technology demonstrations.
+A privacy-first Chrome browser extension that monitors your late-night browsing activity and provides gentle sleep reminders to promote healthy sleep habits. Built for healthcare technology demonstrations and medical conference presentations.
 
 ## 🎯 Features
 
-- **Real-time Activity Monitoring**: Tracks mouse movements, keyboard input, and cursor activity
+- **Browser Activity Monitoring**: Tracks tab switches, page visits, and browsing patterns
 - **Smart Sleep Reminders**: Contextual notifications during late-night hours (11 PM - 6 AM)
-- **Privacy-First Design**: All data processed locally, no external servers
-- **Cross-Platform**: Works on Windows, macOS, and Linux
-- **Visual Dashboard**: Real-time activity visualization and sleep pattern analytics
-- **Customizable Settings**: Configurable reminder intervals and sleep schedules
+- **Privacy-First Design**: All data stored locally in Chrome, no external servers
+- **Universal Access**: Works on any computer with Chrome browser
+- **Visual Dashboard**: Sleep score, activity timeline, and pattern analytics
+- **Dual Theme Interface**: Professional light mode and sleek ruby-red dark mode
+- **Customizable Settings**: Configurable bedtime and reminder intervals
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 16+ 
-- npm or yarn
+### For Users (Chrome Extension)
 
-### Installation
+1. **Load Extension in Chrome**:
+   - Open Chrome and go to `chrome://extensions/`
+   - Enable "Developer mode" (toggle in top right)
+   - Click "Load unpacked"
+   - Select the `extension` folder from this project
+
+2. **Start Using**:
+   - Click the SleepGuard icon in Chrome toolbar
+   - Configure your sleep schedule in settings
+   - Enjoy smart sleep reminders!
+
+### For Developers
 
 1. Clone the repository:
 ```bash
@@ -25,61 +35,52 @@ git clone <repository-url>
 cd sleepguard-mvp
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. Load the extension:
+   - Go to `chrome://extensions/`
+   - Enable "Developer mode"
+   - Click "Load unpacked" → Select `extension` folder
 
-3. Start development mode:
-```bash
-npm run dev
-```
-
-This will start both the React development server and Electron app.
-
-### Building for Production
-
-```bash
-npm run build-electron
-```
+3. Make changes and reload:
+   - Edit files in the `extension` folder
+   - Click the refresh button on the extension card
 
 ## 🏗️ Architecture
 
 ### Core Components
 
-- **Activity Monitor**: Background service tracking user input events
-- **Sleep Analytics Engine**: Pattern recognition and reminder logic
-- **Dashboard Interface**: Real-time monitoring and visualization
-- **Settings Management**: User preferences and privacy controls
+- **Popup Interface**: Main dashboard with sleep score and quick actions
+- **Background Service Worker**: Activity monitoring and notification management
+- **Options Page**: Settings and configuration interface
+- **Local Storage**: Chrome storage API for data persistence
 
 ### Technology Stack
 
-- **Frontend**: React + Styled Components
-- **Desktop App**: Electron
-- **Charts**: Chart.js + React-Chartjs-2
-- **Database**: SQLite (local storage)
-- **Icons**: Lucide React
+- **Extension Framework**: Chrome Extension Manifest V3
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Storage**: Chrome Storage API (local)
+- **Notifications**: Chrome Notifications API
+- **Activity Monitoring**: Chrome Tabs, Idle, and Alarms APIs
 
 ## 📱 Platform Support
 
-### Windows
-- Uses PowerShell commands to monitor cursor position
-- Native Windows notification system
+### Chrome Browser
+- **Windows**: Full support on Chrome for Windows
+- **macOS**: Full support on Chrome for Mac
+- **Linux**: Full support on Chrome for Linux
+- **Chrome OS**: Native support on Chromebooks
 
-### macOS
-- Core Graphics API for activity monitoring
-- Native macOS notification system
-
-### Linux
-- X11 tools (xdotool) for mouse tracking
-- Native Linux notification system
+### Other Chromium Browsers
+- **Microsoft Edge**: Compatible (Chromium-based)
+- **Brave Browser**: Compatible
+- **Opera**: Compatible with minor modifications
 
 ## 🔒 Privacy & Security
 
-- **Local Processing**: All activity data stays on your device
+- **Local Processing**: All activity data stored in Chrome's local storage
 - **No External Servers**: No data transmission to external services
-- **Minimal Data Collection**: Only tracks input events, not content
+- **Minimal Data Collection**: Only tracks browsing patterns, not content
 - **User Control**: Full control over data export and deletion
+- **Chrome Sandbox**: Runs within Chrome's secure extension environment
 
 ## 🎯 Demo Features
 
@@ -106,29 +107,29 @@ npm run build-electron
 ### Project Structure
 ```
 sleepguard-mvp/
-├── public/
-│   ├── electron.js          # Main Electron process
-│   ├── preload.js          # Electron preload script
-│   └── index.html          # HTML template
-├── src/
-│   ├── components/         # React components
-│   │   ├── Dashboard.js    # Main dashboard
-│   │   ├── ActivityMonitor.js # Activity logging
-│   │   ├── Settings.js     # Settings panel
-│   │   └── Header.js       # App header
-│   ├── styles/
-│   │   └── theme.js        # Styled-components theme
-│   ├── App.js              # Main React component
-│   └── index.js            # React entry point
-├── package.json            # Dependencies and scripts
-└── README.md              # This file
+├── extension/              # Chrome Extension Files
+│   ├── manifest.json       # Extension configuration
+│   ├── popup.html         # Main popup interface
+│   ├── popup.js           # Popup functionality
+│   ├── popup.css          # Popup styling
+│   ├── background.js      # Background service worker
+│   ├── options.html       # Settings page
+│   ├── options.js         # Settings functionality
+│   ├── options.css        # Settings styling
+│   ├── icons/             # Extension icons
+│   └── styles/            # Shared styles
+├── src/                   # Desktop App (Electron)
+│   ├── components/        # React components
+│   ├── styles/            # Styled-components theme
+│   └── App.js             # Main React component
+├── package.json           # Dependencies and scripts
+└── README.md             # This file
 ```
 
 ### Key Scripts
-- `npm run dev` - Start development mode
-- `npm run build` - Build React app
-- `npm run electron` - Run Electron app
-- `npm run build-electron` - Build production app
+- **Chrome Extension**: Load `extension` folder in Chrome
+- **Desktop App**: `npm run dev` - Start Electron development mode
+- **Desktop App**: `npm run build-electron` - Build production app
 
 ## 📊 Demo Scenarios
 
@@ -149,11 +150,11 @@ sleepguard-mvp/
 
 ## 🔮 Future Enhancements
 
-- **Machine Learning**: Predictive sleep pattern analysis
-- **Health Integration**: Connect with fitness trackers
-- **Mobile Companion**: iOS/Android companion app
-- **Team Dashboard**: Healthcare provider insights
-- **API Integration**: Connect with sleep research databases
+- **Pattern Recognition**: On-device machine learning for personalized sleep recommendations
+- **Chrome Web Store**: Professional distribution and auto-updates
+- **Health Integration**: Connect with fitness trackers and health apps
+- **Advanced Analytics**: Detailed sleep pattern insights and trends
+- **Team Dashboard**: Healthcare provider insights and patient monitoring
 
 ## 📄 License
 

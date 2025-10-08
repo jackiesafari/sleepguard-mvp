@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepGuard Settings</title>
+    <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+    <div class="options-container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h1>SleepGuard Settings</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="toggle-slider">
+                    <svg id="toggleIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+        <div class="main-content">
+            <!-- Sleep Schedule -->
+            <div class="settings-section">
+                <h2>Sleep Schedule</h2>
+                <div class="setting-item">
+                    <label for="sleepTime">Target Bedtime</label>
+                    <input type="time" id="sleepTime" value="23:00">
+                    <p class="setting-description">When you typically want to go to sleep</p>
+                </div>
+
+                <div class="setting-item">
+                    <label for="reminderInterval">Reminder Interval</label>
+                    <select id="reminderInterval">
+                        <option value="15">Every 15 minutes</option>
+                        <option value="30" selected>Every 30 minutes</option>
+                        <option value="60">Every hour</option>
+                        <option value="120">Every 2 hours</option>
+                    </select>
+                    <p class="setting-description">How often to show reminders during late-night activity</p>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="settings-section">
+                <h2>Notifications</h2>
+                <div class="setting-item">
+                    <div class="toggle-setting">
+                        <label for="notifications">Enable Notifications</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="notifications" checked>
+                            <span class="slider"></span>
+                        </div>
+                    </div>
+                    <p class="setting-description">Show sleep reminder notifications</p>
+                </div>
+            </div>
+
+            <!-- Privacy & Data -->
+            <div class="settings-section">
+                <h2>Privacy & Data</h2>
+                <div class="setting-item">
+                    <div class="toggle-setting">
+                        <label for="darkMode">Dark Mode</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="darkMode">
+                            <span class="slider"></span>
+                        </div>
+                    </div>
+                    <p class="setting-description">Use dark theme for better night viewing</p>
+                </div>
+
+                <div class="setting-item">
+                    <button class="action-button secondary" id="exportData">Export Data</button>
+                    <p class="setting-description">Download your settings and activity data</p>
+                </div>
+
+                <div class="setting-item">
+                    <button class="action-button danger" id="clearData">Clear All Data</button>
+                    <p class="setting-description">Remove all stored activity history and settings</p>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="settings-section">
+                <h2>About</h2>
+                <div class="about-info">
+                    <p><strong>SleepGuard v1.0.0</strong></p>
+                    <p>Privacy-first sleep health assistant</p>
+                    <p>All data is stored locally on your device</p>
+                    <p>No external servers or data transmission</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="action-button primary" id="saveSettings">Save Settings</button>
+            <button class="action-button secondary" id="resetSettings">Reset to Defaults</button>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
